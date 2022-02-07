@@ -1,0 +1,31 @@
+server:
+  port: 5000
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://modgo.mysql.database.azure.com:3306/modgo
+    username: brido
+    password: ckdtjq12!
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    # database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: create #create #none #update #validate
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true
+
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+    # Request method 'DELETE' not supported
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
